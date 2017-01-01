@@ -1,5 +1,11 @@
-angular.module('io.github.marcelothebuilder.foodbook')
-  .run(function($ionicPlatform) {
+(function() {
+  'use strict';
+  angular.module('io.github.marcelothebuilder.foodbook')
+    .run(configureIonic);
+
+  configureIonic.$inject = ['$ionicPlatform'];
+
+  function configureIonic($ionicPlatform) {
     $ionicPlatform.ready(function() {
       if (window.cordova && window.cordova.plugins.Keyboard) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -15,4 +21,5 @@ angular.module('io.github.marcelothebuilder.foodbook')
         StatusBar.styleDefault();
       }
     });
-  });
+  }
+}());
