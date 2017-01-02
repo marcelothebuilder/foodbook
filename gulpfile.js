@@ -41,7 +41,7 @@ gulp.task('sass', (done) => {
         .on('end', done);
 });
 
-gulp.task('watch', ['sass', 'wiredep'], () => {
+gulp.task('watch', ['babel', 'sass', 'wiredep'], () => {
     gulp.watch(paths.js, ['babel']);
     gulp.watch(paths.sass, ['sass']);
     gulp.watch(paths.bower, ['wiredep']);
