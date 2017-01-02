@@ -1,6 +1,4 @@
-var gulp = require('gulp');
-
-(function() {
+(function(gulp) {
     'use strict';
     var gutil = require('gulp-util');
     var bower = require('bower');
@@ -64,4 +62,4 @@ var gulp = require('gulp');
         }
         done();
     });
-})();
+})(require('gulp'));
