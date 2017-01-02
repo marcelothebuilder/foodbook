@@ -88,6 +88,8 @@
 
     // Custom Globals
     "globals": {
-        "angular": true
+        "angular": true,
+        "require": true,
+        "process": true
     } // additional predefined global variables
 }
