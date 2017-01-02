@@ -2,6 +2,7 @@
     "name": "foodbook",
     "app_id": "",
     "gulpStartupTasks": [
+        "babel",
         "sass",
         "wiredep",
         "watch"

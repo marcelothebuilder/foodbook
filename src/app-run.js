@@ -1,14 +1,12 @@
-'use strict';
-
-(function () {
+(function() {
     'use strict';
-
-    angular.module('io.github.marcelothebuilder.foodbook').run(configureIonic);
+    angular.module('io.github.marcelothebuilder.foodbook')
+        .run(configureIonic);
 
     configureIonic.$inject = ['$ionicPlatform'];
 
     function configureIonic($ionicPlatform) {
-        $ionicPlatform.ready(function () {
+        $ionicPlatform.ready(function() {
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
                 // for form inputs)
@@ -24,5 +22,4 @@
             }
         });
     }
-})();
-//# sourceMappingURL=app-run.js.map
+}());

@@ -1,0 +1,1 @@
+{"version":3,"sources":["app-modules.js"],"names":["angular","module"],"mappings":";;AAAC,aAAW;AACR;;AACAA,YAAQC,MAAR,CAAe,sCAAf,EAAuD,CAAC,OAAD,CAAvD;AACH,CAHA,GAAD","file":"app-modules.js","sourcesContent":["(function() {\r\n    'use strict';\r\n    angular.module('io.github.marcelothebuilder.foodbook', ['ionic']);\r\n}());\r\n"]}
