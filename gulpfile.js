@@ -31,7 +31,7 @@
 
     gulp.task('default', ['watch']);
 
-    gulp.task('serve:before', ['sass', 'wiredep', 'watch']);
+    gulp.task('serve:before', ['babel', 'sass', 'wiredep', 'watch']);
 
     gulp.task('sass', function(done) {
         gulp.src('./scss/app.scss')
