@@ -3,10 +3,12 @@
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
+    "wiredep",
     "watch"
   ],
   "watchPatterns": [
     "www/**/*",
+    "bower.json",
     "!www/lib/**/*",
     "!www/**/*.map"
   ]

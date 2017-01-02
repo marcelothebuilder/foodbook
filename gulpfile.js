@@ -6,12 +6,16 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var wiredep = require('gulp-wiredep');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  bower: ['./bower.json']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['watch']);
+
+gulp.task('serve:before', ['sass', 'wiredep', 'watch']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -21,13 +25,16 @@ gulp.task('sass', function(done) {
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe(rename({ extname: '.min.css' }))
+    .pipe(rename({
+      extname: '.min.css'
+    }))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
 });
 
-gulp.task('watch', ['sass'], function() {
+gulp.task('watch', ['sass', 'wiredep'], function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.bower, ['wiredep']);
 });
 
 gulp.task('install', ['git-check'], function() {
@@ -35,6 +42,12 @@ gulp.task('install', ['git-check'], function() {
     .on('log', function(data) {
       gutil.log('bower', gutil.colors.cyan(data.id), data.message);
     });
+});
+
+gulp.task('wiredep', function() {
+  return gulp.src('./www/index.html')
+    .pipe(wiredep())
+    .pipe(gulp.dest('./www/'));
 });
 
 gulp.task('git-check', function(done) {
