@@ -46,7 +46,9 @@
 
     gulp.task('wiredep', function() {
         return gulp.src('./www/index.html')
-            .pipe(wiredep())
+            .pipe(wiredep({
+                exclude: ['./lib/ionic/css/ionic.css']
+            }))
             .pipe(gulp.dest('./www/'));
     });
 
