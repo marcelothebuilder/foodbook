@@ -9,6 +9,7 @@ const wiredep = require('gulp-wiredep');
 const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
+const ngAnnotate = require('gulp-ng-annotate');
 
 const paths = {
     sass: ['./scss/**/*.scss'],
@@ -23,6 +24,7 @@ gulp.task('babel', () =>
     .pipe(babel({
         presets: ['es2015']
     }))
+    .pipe(ngAnnotate())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('www/js'))
 );
