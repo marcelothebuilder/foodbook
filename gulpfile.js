@@ -10,6 +10,7 @@ const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const ngAnnotate = require('gulp-ng-annotate');
+const shell = require('gulp-shell');
 
 const paths = {
     sass: ['scss/**/*.scss'],
@@ -47,11 +48,25 @@ gulp.task('watch', ['babel', 'sass', 'wiredep'], () => {
     gulp.watch(paths.bower, ['wiredep']);
 });
 
-gulp.task('install', ['git-check'], () => {
+gulp.task('install', ['git-check', 'ionic:install'], () => {
     return bower.commands.install()
         .on('log', (data) => {
             gutil.log('bower', gutil.colors.cyan(data.id), data.message);
         });
+});
+
+gulp.task('ionic:install', ['ionic:copy-resources']);
+
+gulp.task('ionic:resources', shell.task([
+    'ionic resources android --icon'
+]));
+
+gulp.task('ionic:restore', ['ionic:resources'], shell.task([
+    'ionic state restore'
+]));
+
+gulp.task('ionic:copy-resources', ['ionic:restore'], () => {
+    return gulp.src(['./res/**/*']).pipe(gulp.dest('./platforms/android/res/'));
 });
 
 gulp.task('wiredep', () => {

@@ -16,6 +16,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-util": "^2.2.14",
     "gulp-wiredep": "0.0.0",
