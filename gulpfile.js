@@ -12,9 +12,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const ngAnnotate = require('gulp-ng-annotate');
 
 const paths = {
-    sass: ['./scss/**/*.scss'],
-    bower: ['./bower.json'],
-    js: ['./src/**/*.js']
+    sass: ['scss/**/*.scss'],
+    bower: ['bower.json'],
+    js: ['src/**/*.js']
 };
 
 gulp.task('babel', () =>
