@@ -110,7 +110,7 @@ class AddRecipeController {
     }
 }
 
-angular.module('io.github.marcelothebuilder.foodbook').controller('AddRecipeController', AddRecipeController);
+angular.module('io.github.marcelothebuilder.foodbook.recipe').controller('AddRecipeController', AddRecipeController);
 
 
 class ListRecipeController {
@@ -131,7 +131,7 @@ class ListRecipeController {
     }
 }
 
-angular.module('io.github.marcelothebuilder.foodbook').controller('ListRecipeController', ListRecipeController);
+angular.module('io.github.marcelothebuilder.foodbook.recipe').controller('ListRecipeController', ListRecipeController);
 
 
 class ShowRecipeController {
@@ -146,4 +146,4 @@ class ShowRecipeController {
 
 }
 
-angular.module('io.github.marcelothebuilder.foodbook').controller('ShowRecipeController', ShowRecipeController);
+angular.module('io.github.marcelothebuilder.foodbook.recipe').controller('ShowRecipeController', ShowRecipeController);

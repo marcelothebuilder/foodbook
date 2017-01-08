@@ -23,4 +23,4 @@ class RecipeService {
     }
 }
 
-angular.module('io.github.marcelothebuilder.foodbook').service('RecipeService', RecipeService);
+angular.module('io.github.marcelothebuilder.foodbook.recipe').service('RecipeService', RecipeService);
