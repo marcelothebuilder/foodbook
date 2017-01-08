@@ -90,6 +90,7 @@
     "globals": {
         "angular": true,
         "require": true,
-        "process": true
+        "process": true,
+        "firebase": true
     } // additional predefined global variables
 }
