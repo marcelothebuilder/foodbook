@@ -1,0 +1,30 @@
+<ion-view view-title="New Recipe">
+    <ion-content>
+        <ion-list>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Recipe name</span>
+                <input type="text" placeholder="A delicious pie" ng-model="vm.recipe().name">
+            </label>
+            <div class="item item-button-right">
+                {{vm.newRecipe.ingredients.length}}
+                Ingredients
+                <button class="button button-positive" ng-click="vm.openIngredientsEdit()">
+                    <i class="icon ion-edit"></i>
+                </button>
+            </div>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Instructions</span>
+                <input type="text" placeholder="What should I do with those ingredients?" ng-model="vm.recipe().instructions">
+            </label>
+        </ion-list>
+
+        <div class="row">
+            <div class="col">
+                <button class="button button-positive button-block" ng-disabled="!vm.isValidRecipe()" ng-click="vm.addNewRecipe()">
+                    Add recipe
+                </button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

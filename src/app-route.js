@@ -8,5 +8,12 @@ function configStates($stateProvider, $urlRouterProvider) {
         templateUrl: 'views/home.html'
     });
 
+    $stateProvider.state('recipe-add', {
+        url: '/recipe-add',
+        templateUrl: 'views/recipe-add.html',
+        controller: 'AddRecipeController',
+        controllerAs: 'vm'
+    });
+
     $urlRouterProvider.otherwise('/');
 }

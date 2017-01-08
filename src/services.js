@@ -9,6 +9,15 @@ class RecipeService {
         return this.recipes;
     }
 
+    add(name, ingredients, instructions) {
+        return this.all().$add({
+            name: name,
+            ingredients: ingredients,
+            instructions: instructions,
+            submitDate: new Date()
+        });
+    }
+
     get(id) {
         return this.recipes.$getRecord(id);
     }

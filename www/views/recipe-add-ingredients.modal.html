@@ -1,0 +1,36 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-dark">
+        <h1 class="title">Add ingredients</h1>
+        <div class="buttons">
+            <button class="button" ng-click="closeIngredientsEdit()">Done</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <ion-list>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Strawberry?</span>
+                <input type="text" placeholder="A delicious pie" ng-model="ingredient.name">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Quantity</span>
+                <input type="number" ng-model="ingredient.amount">
+            </label>
+        </ion-list>
+
+        <div class="row">
+            <div class="col">
+                <button type="button" class="button button-positive button-block" ng-click="addIngredient(ingredient); ingredient = {};">Add</button>
+            </div>
+        </div>
+
+        <ion-list class="list-inset" show-delete="true">
+            <ion-item ng-repeat="ingredient in ingredients() track by $index">
+                {{ingredient.name}}
+                x
+                {{ingredient.amount}}
+
+                <ion-delete-button class="ion-minus-circled" ng-click="ingredients().splice($index, 1)"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
