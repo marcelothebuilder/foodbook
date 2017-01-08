@@ -7,3 +7,6 @@ plugins/
 www/lib/
 www/css/
 www/js/
+res/
+resources/
+!resources/icon.psd
