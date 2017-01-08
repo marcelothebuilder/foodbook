@@ -68,7 +68,7 @@ class AddRecipeController {
     }
 
     configureIngredientsModal($scope) {
-        this.$ionicModal.fromTemplateUrl('views/recipe-add-ingredients.modal.html', {
+        this.$ionicModal.fromTemplateUrl('views/recipe/recipe-add-ingredients.modal.html', {
             animation: 'slide-in-up',
             scope: $scope
         }).then((modalController) => {

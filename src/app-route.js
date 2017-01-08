@@ -10,21 +10,21 @@ function configStates($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('recipe-add', {
         url: '/recipe-add',
-        templateUrl: 'views/recipe-add.html',
+        templateUrl: 'views/recipe/recipe-add.html',
         controller: 'AddRecipeController',
         controllerAs: 'vm'
     });
 
     $stateProvider.state('recipe-list', {
         url: '/recipe-list',
-        templateUrl: 'views/recipe-list.html',
+        templateUrl: 'views/recipe/recipe-list.html',
         controller: 'ListRecipeController',
         controllerAs: 'vm'
     });
 
     $stateProvider.state('recipe-show', {
         url: '/recipe-show/:id',
-        templateUrl: 'views/recipe-show.html',
+        templateUrl: 'views/recipe/recipe-show.html',
         controller: 'ShowRecipeController',
         controllerAs: 'vm',
         /*@ngInject*/
