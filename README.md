@@ -10,6 +10,7 @@
 * <pre>npm install -g gulp</pre>
 * <pre>gulp install</pre>
 * <pre>ionic serve</pre>
+
 ## More info
 Distributed under the GNU GENERAL PUBLIC LICENSE Version 3 license. See ``LICENSE`` for more information.
 
