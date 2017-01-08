@@ -111,3 +111,39 @@ class AddRecipeController {
 }
 
 angular.module('io.github.marcelothebuilder.foodbook').controller('AddRecipeController', AddRecipeController);
+
+
+class ListRecipeController {
+    /*@ngInject*/
+    constructor(RecipeService, $state) {
+        this.recipeService = RecipeService;
+        this.$state = $state;
+    }
+
+    recipes() {
+        return this.recipeService.all();
+    }
+
+    showRecipe(recipe) {
+        return this.$state.transitionTo('recipe-show', {
+            id: recipe.$id
+        });
+    }
+}
+
+angular.module('io.github.marcelothebuilder.foodbook').controller('ListRecipeController', ListRecipeController);
+
+
+class ShowRecipeController {
+    /*@ngInject*/
+    constructor(Recipe) {
+        this._recipe = Recipe;
+    }
+
+    recipe() {
+        return this._recipe;
+    }
+
+}
+
+angular.module('io.github.marcelothebuilder.foodbook').controller('ShowRecipeController', ShowRecipeController);
